@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <title>ನಾಳೆ ಬೆಳಗು</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nevbar" id="nevbar">
+        <div class="logo">
+            <h1><span>ನಾಳೆ</span> ಬೆಳಗು</h1>
+        </div>
+        <div class="menu" id="menu">
+            <ul>
+                <li><a id="home" href="index.html">Home</a></li>
+                <li><a href="about.html">Explore</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a id="donate" href="#donate-section" class="donate-btn">Donate</a></li>
+            </ul>
+        </div>
+        <div class="menuicon">
+            <i id="menuicon" onclick="togglemenu()" class="fas fa-bars"><span></span></i>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <div class="cover">
+        <div class="upperline"></div>
+        <div class="belowline"></div>
+
+        <div class="information" data-aos="fade-up" data-aos-delay="200">
+            <h3>Let's</h3>
+            <h2>Build Hope, One School at a Time</h2>
+            <h1 id="design">TOGETHER</h1>
+        </div>
+        <div class="glowing" data-aos="fade-up" data-aos-delay="400">
+            <a href="donate.html" style="--clr:#1e9bff"><button><span>DONATE</span><i></i></button></a>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="about" id="about">
+        <div class="imgcontanner" data-aos="fade-right">
+            <div class="aboutimg"></div>
+        </div>
+        <div class="aboutcontent" data-aos="fade-left">
+            <h5>_______________</h5>
+            <h1>Why should we Donate?</h1>
+            <p>The primary cause of donations to children nowadays is to provide them with essential resources, support, and opportunities to ensure their well-being, education, and future development.</p>
+            <p>These donations aim to address various issues that children may face, including poverty, lack of access to education, healthcare, nutrition, and protection from abuse and exploitation. Additionally, donations help create a more inclusive and equitable society by promoting equal opportunities for children, regardless of their background or circumstances.</p>
+            <h5>_________________</h5>
+        </div>
+    </div>
+
+    <!-- Donate Section -->
+    <div class="donate-section" id="donate-section" data-aos="fade-up">
+        <h2>Make a Difference Today</h2>
+        <p>Your contribution can change lives and build a brighter future for children in need.</p>
+        
+        <!-- Progress Bar Section -->
+        <div class="fundraising-progress" data-aos="fade-up">
+            <div class="progress-stats">
+                <div class="progress-amount">
+                    <div class="amount-raised">₹<span id="amountRaised">135000</span></div>
+                    <div class="amount-target">Goal: ₹<span id="targetAmount">500000</span></div>
+                </div>
+                <div class="progress-percentage"><span id="progressPercentage">27</span>% Complete</div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-filled" id="progressFilled"></div>
+                    <div class="progress-markers">
+                        <div class="marker marker-25" data-percentage="25">
+                            <div class="marker-label">25%</div>
+                        </div>
+                        <div class="marker marker-50" data-percentage="50">
+                            <div class="marker-label">50%</div>
+                        </div>
+                        <div class="marker marker-75" data-percentage="75">
+                            <div class="marker-label">75%</div>
+                        </div>
+                        <div class="marker marker-100" data-percentage="100">
+                            <div class="marker-label">100%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="progress-milestones">
+                <div class="milestone" data-milestone="100000">
+                    <div class="milestone-icon"><i class="fas fa-book"></i></div>
+                    <div class="milestone-text">School Supplies</div>
+                </div>
+                <div class="milestone" data-milestone="250000">
+                    <div class="milestone-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="milestone-text">Teacher Support</div>
+                </div>
+                <div class="milestone" data-milestone="400000">
+                    <div class="milestone-icon"><i class="fas fa-school"></i></div>
+                    <div class="milestone-text">Classroom Renovation</div>
+                </div>
+                <div class="milestone" data-milestone="500000">
+                    <div class="milestone-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="milestone-text">Full Program</div>
+                </div>
+            </div>
+            
+            <div class="progress-supporters">
+                <div class="supporter-count"><span id="supporterCount">48</span> Supporters</div>
+                <div class="recent-donations">
+                    <div class="recent-donation" data-aos="fade-up" data-aos-delay="100">
+                        <div class="donation-avatar">RS</div>
+                        <div class="donation-info">
+                            <div class="donation-name">Ramesh S.</div>
+                            <div class="donation-amount">₹5000</div>
+                        </div>
+                        <div class="donation-time">2 hours ago</div>
+                    </div>
+                    <div class="recent-donation" data-aos="fade-up" data-aos-delay="200">
+                        <div class="donation-avatar">AP</div>
+                        <div class="donation-info">
+                            <div class="donation-name">Anjali P.</div>
+                            <div class="donation-amount">₹2000</div>
+                        </div>
+                        <div class="donation-time">5 hours ago</div>
+                    </div>
+                    <div class="recent-donation" data-aos="fade-up" data-aos-delay="300">
+                        <div class="donation-avatar">KM</div>
+                        <div class="donation-info">
+                            <div class="donation-name">Kiran M.</div>
+                            <div class="donation-amount">₹10000</div>
+                        </div>
+                        <div class="donation-time">Yesterday</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="donation-options">
+            <div class="donation-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="donation-amount">₹500</div>
+                <p>Provides school supplies for one child</p>
+                <button class="donate-amount-btn" data-amount="500">Donate Now</button>
+            </div>
+            
+            <div class="donation-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="donation-amount">₹1000</div>
+                <p>Provides a month of education for one child</p>
+                <button class="donate-amount-btn" data-amount="1000">Donate Now</button>
+            </div>
+            
+            <div class="donation-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="donation-amount">₹5000</div>
+                <p>Helps build school infrastructure</p>
+                <button class="donate-amount-btn" data-amount="5000">Donate Now</button>
+            </div>
+        </div>
+        
+        <div class="custom-donation" data-aos="fade-up">
+            <h3>Or enter a custom amount:</h3>
+            <div class="custom-amount-input">
+                <span>₹</span>
+                <input type="number" min="100" placeholder="Enter amount" id="customAmount">
+                <button class="donate-custom-btn">Donate</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Contact Section -->
+    <div class="contact" id="contact">
+        <div class="text">
+            <h1 data-text="CONTACT">CONTACT</h1>
+        </div>
+        <br>
+        <div class="contactcontanner">
+            <div class="messageform">
+                <div class="form">
+                    <form action="https://formspree.io/f/xkgjzqzz" method="POST" id="contactForm">
+                        <input type="text" name="name" placeholder="YOUR NAME" required>
+                        <input type="tel" name="phone" placeholder="YOUR CONTACT NO" required>
+                        <input type="email" name="email" placeholder="EMAIL" required>
+                        <input type="text" name="subject" placeholder="SUBJECT" required>
+                        <textarea name="message" id="inputbox" cols="30" rows="5" placeholder="MESSAGE" required></textarea>
+                        
+                        <!-- Redirect to thank-you page after submission -->
+                        <input type="hidden" name="_next" value="thankyou.html">
+                        <!-- Prevent spam submissions -->
+                        <input type="hidden" name="_captcha" value="true">
+                        <!-- Ensure we reload the page when coming back from thank you page -->
+                        <input type="hidden" name="_refresh" value="true">
+                        
+                        <button type="submit">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>          
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="social_icon">
+            <li><a href="https://x.com/whoswasthik"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/swasthik-bs"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com/swasthik_bs?igsh=cjJja2MxM2Zpcmsz&utm_source=ig_contact_invite"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://github.com/swasthik-bs"><i class="fab fa-github"></i></a></li>
+        </ul>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Explore</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#donate-section">Donate</a></li>
+        </ul>
+        <p>&copy; 2025 Swasthik BS | All Rights Reserved</p>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 800,
+            once: false
+        });
+        
+        // Dropdown menu script
+        var menu = document.getElementById("menu");
+        menu.style.maxHeight = "0px";
+        function togglemenu() {
+            if (menu.style.maxHeight == "0px") {
+                menu.style.maxHeight = "390px";
+            } else {
+                menu.style.maxHeight = "0px";
+            }
+        }
+        
+        // Payment modal functionality
+        const donateButtons = document.querySelectorAll('.donate-amount-btn');
+        donateButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Get the amount from the data attribute
+                const amount = this.getAttribute('data-amount');
+                // Redirect to the donation page with amount parameter
+                window.location.href = "donate.html?amount=" + amount;
+            });
+        });
+
+        // Custom amount donation
+        const customDonateBtn = document.querySelector('.donate-custom-btn');
+        const customAmountInput = document.getElementById('customAmount');
+        
+        if (customDonateBtn && customAmountInput) {
+            customDonateBtn.addEventListener('click', function() {
+                const amount = customAmountInput.value;
+                if (amount && amount >= 100) {
+                    window.location.href = "donate.html?amount=" + amount;
+                } else {
+                    alert('Please enter a valid amount (minimum ₹100)');
+                }
+            });
+            
+            // Also allow pressing Enter to submit
+            customAmountInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    const amount = customAmountInput.value;
+                    if (amount && amount >= 100) {
+                        window.location.href = "donate.html?amount=" + amount;
+                    } else {
+                        alert('Please enter a valid amount (minimum ₹100)');
+                    }
+                }
+            });
+        }
+
+        // Scroll to top functionality
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Change navbar background on scroll
+        const navbar = document.querySelector('.nevbar');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Check if page is being loaded from a back action after form submission
+        window.addEventListener('pageshow', function(event) {
+            // If the page is loaded from the cache (like with the back button)
+            if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+                // Reload the page to ensure a fresh state
+                window.location.reload();
+            }
+        });
+
+        // Handle URL parameters for refresh
+        function getUrlParameter(name) {
+            name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Check if the refresh parameter is present
+        if (getUrlParameter('refresh')) {
+            // Remove the parameter from the URL without refreshing the page
+            const newUrl = window.location.protocol + "//" + window.location.host + 
+                      window.location.pathname + window.location.hash;
+            window.history.replaceState({ path: newUrl }, '', newUrl);
+        }
+
+        // Add form submission handling
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(event) {
+                // Form is being submitted - no need to prevent default as we want the form to submit
+                
+                // Store in sessionStorage that we've submitted the form
+                // This can be checked when returning to ensure we refresh
+                sessionStorage.setItem('formSubmitted', 'true');
+                
+                // Allow form submission to continue normally
+                // FormSpree will handle the submission and redirect to thankyou.html
+            });
+        }
+        
+        // Check if we need to refresh the page (if we've come back from form submission)
+        document.addEventListener('DOMContentLoaded', function() {
+            if (sessionStorage.getItem('formSubmitted') === 'true') {
+                // Clear the flag
+                sessionStorage.removeItem('formSubmitted');
+                
+                // Check if we're on the main page (not the thank you page)
+                if (!window.location.href.includes('thankyou.html')) {
+                    // Reload once to ensure fresh state
+                    window.location.reload();
+                }
+            }
+            
+            // Initialize progress bar
+            initProgressBar();
+        });
+        
+        // Progress Bar Functionality
+        function initProgressBar() {
+            const progressBar = document.getElementById('progressFilled');
+            const amountRaised = document.getElementById('amountRaised');
+            const targetAmount = document.getElementById('targetAmount');
+            const progressPercentage = document.getElementById('progressPercentage');
+            const milestones = document.querySelectorAll('.milestone');
+            const markers = document.querySelectorAll('.marker');
+            
+            if (!progressBar || !amountRaised || !targetAmount || !progressPercentage) return;
+            
+            // Get amounts
+            const raised = parseInt(amountRaised.textContent.replace(/,/g, ''));
+            const target = parseInt(targetAmount.textContent.replace(/,/g, ''));
+            
+            // Calculate percentage
+            const percentage = Math.min(Math.round((raised / target) * 100), 100);
+            
+            // Update percentage text
+            progressPercentage.textContent = percentage;
+            
+            // Animate progress bar
+            setTimeout(() => {
+                progressBar.style.width = percentage + '%';
+            }, 500);
+            
+            // Update milestones
+            milestones.forEach(milestone => {
+                const milestoneAmount = parseInt(milestone.getAttribute('data-milestone'));
+                if (raised >= milestoneAmount) {
+                    milestone.classList.add('reached');
+                } else {
+                    milestone.classList.remove('reached');
+                }
+            });
+            
+            // Update markers
+            markers.forEach(marker => {
+                const markerPercentage = parseInt(marker.getAttribute('data-percentage'));
+                if (percentage >= markerPercentage) {
+                    marker.classList.add('reached');
+                } else {
+                    marker.classList.remove('reached');
+                }
+            });
+            
+            // Format numbers with commas for display
+            amountRaised.textContent = formatNumber(raised);
+            targetAmount.textContent = formatNumber(target);
+            
+            // Add hover effect to donations
+            const recentDonations = document.querySelectorAll('.recent-donation');
+            recentDonations.forEach(donation => {
+                donation.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                donation.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Interactive contribution simulation
+            const donateButtons = document.querySelectorAll('.donate-amount-btn');
+            donateButtons.forEach(button => {
+                const originalHandler = button.onclick;
+                button.addEventListener('mouseenter', function() {
+                    const amount = parseInt(this.getAttribute('data-amount'));
+                    simulateContribution(raised, target, amount);
+                });
+                button.addEventListener('mouseleave', function() {
+                    resetProgressBar(raised, target);
+                });
+            });
+        }
+        
+        // Simulate adding a contribution temporarily
+        function simulateContribution(raised, target, amount) {
+            const progressBar = document.getElementById('progressFilled');
+            const progressPercentage = document.getElementById('progressPercentage');
+            
+            if (!progressBar || !progressPercentage) return;
+            
+            const newRaised = raised + amount;
+            const newPercentage = Math.min(Math.round((newRaised / target) * 100), 100);
+            
+            progressPercentage.textContent = newPercentage;
+            progressBar.style.width = newPercentage + '%';
+            progressBar.style.boxShadow = '0 0 15px rgba(24, 240, 139, 0.7)';
+            
+            // Pulsate animation
+            progressBar.style.animation = 'pulsate 1s infinite';
+        }
+        
+        // Reset progress bar to actual values
+        function resetProgressBar(raised, target) {
+            const progressBar = document.getElementById('progressFilled');
+            const progressPercentage = document.getElementById('progressPercentage');
+            
+            if (!progressBar || !progressPercentage) return;
+            
+            const percentage = Math.min(Math.round((raised / target) * 100), 100);
+            
+            progressPercentage.textContent = percentage;
+            progressBar.style.width = percentage + '%';
+            progressBar.style.boxShadow = '0 0 10px rgba(30, 155, 255, 0.5)';
+            progressBar.style.animation = 'none';
+        }
+        
+        // Format numbers with commas
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+        
+        // Add pulsate animation
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes pulsate {
+                0% { box-shadow: 0 0 10px rgba(24, 240, 139, 0.5); }
+                50% { box-shadow: 0 0 20px rgba(24, 240, 139, 0.8); }
+                100% { box-shadow: 0 0 10px rgba(24, 240, 139, 0.5); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - ನಾಳೆ ಬೆಳಗು</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .thank-you-container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 50px 40px;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .success-icon {
+            font-size: 80px;
+            color: #18f08b;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background-color: #1e9bff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background-color: #18f08b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(24, 240, 139, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding: 40px 20px;
+            }
+            
+            .success-icon {
+                font-size: 60px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="thank-you-container" data-aos="fade-up">
+        <i class="fas fa-check-circle success-icon"></i>
+        <h1>Thank You!</h1>
+        <p>Your message has been successfully sent. We appreciate your interest in our cause and will get back to you shortly.</p>
+        <a href="index.html?refresh=true" class="back-btn" onclick="goBackAndRefresh()">Back to Home</a>
+    </div>
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Function to refresh index page when going back
+        function goBackAndRefresh() {
+            // Using location.replace to replace the current history entry
+            // which will force a full page refresh when loading index.html
+            window.location.replace("index.html?refresh=" + new Date().getTime());
+            
+            // Prevent default link behavior
+            return false;
+        }
+        
+        // Set a flag in sessionStorage to indicate that we should refresh the home page
+        window.addEventListener('DOMContentLoaded', function() {
+            sessionStorage.setItem('formSubmitted', 'true');
+        });
+    </script>
+</body>
+
+</html>

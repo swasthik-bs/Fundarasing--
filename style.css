@@ -1,0 +1,1364 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Variables */
+:root {
+    --primary-color: #1e9bff;
+    --secondary-color: #18f08b;
+    --dark-bg: #000000f6;
+    --light-text: #fff;
+    --accent-blue: rgb(3, 97, 249);
+    --transition: all 0.3s ease;
+}
+
+/*****************************  nevigation bar ****************************/
+.nevbar{
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 999;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 0;
+    transition: var(--transition);
+}
+
+.nevbar.scrolled {
+    background-color: var(--dark-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo h1{
+    position: relative;
+    margin: 15px 100px;
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--light-text);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.logo h1:before{
+    content:'';
+    position: absolute;
+    left: -20%;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(90deg,transparent 0%, #000 5%, #000 100%);
+    animation: animate 5s linear infinite;
+    animation-delay: 2s;
+}
+
+@keyframes animate {
+    0%{
+        left: -20%;
+    }
+    100%{
+        left: 110%;
+    }
+}
+.logo h1 span{
+    color: var(--primary-color);
+}
+.menu{
+    flex: 1;
+    text-align: right;
+    margin-top: 28px;
+    margin-right: 100px;
+}
+.menu ul li{
+    list-style: none;
+    display: inline-block;
+}
+.menu ul li a{
+    text-decoration: none;
+    color: white;
+    margin-left: 30px;
+    font-size: 18px;
+    transition: var(--transition);
+    font-weight: 500;
+    position: relative;
+    letter-spacing: 0.5px;
+    padding: 5px;
+}
+.menu ul li a:before,
+.menu ul li a:after {
+    content:'';
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background-color: var(--secondary-color);
+    transition: var(--transition);
+}
+.menu ul li a:after{
+    left: 0;
+    bottom: -10px;
+}
+.menu ul li a:before{
+    right: 0;
+    top: -10px;
+}
+.menu ul li a:hover{
+    color: var(--primary-color);
+}
+.menu ul li a:hover:after,
+.menu ul li a:hover:before {
+    width: 100%;
+}
+
+.donate-btn {
+    background-color: var(--primary-color);
+    padding: 8px 16px !important;
+    border-radius: 50px;
+    color: var(--light-text) !important;
+    transition: var(--transition);
+}
+
+.donate-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--dark-bg) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(24, 240, 139, 0.3);
+}
+
+/* ------------------------------------- menu icon -----------------------------------------*/
+.menuicon{
+    margin: auto;
+    color: rgba(255, 255, 255, 0.5);
+    display: none;
+}
+.menuicon i {
+    font-size: 24px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.menuicon i:hover {
+    color: var(--primary-color);
+}
+
+/*                                         For  mobile view                     */
+@media only screen and (max-width : 768px){
+    .nevbar{
+        background-color: rgba(0, 0, 0, 0.95);
+        padding: 0.5rem 0;
+    }
+    .logo h1{
+        margin: 15px 20px;
+        font-size: 28px;
+    }
+    .menu{
+        text-align: right;
+        margin-right: 0px;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        top: 65px;
+        max-height: 0px;
+        overflow: hidden;
+        box-shadow: 0px 10px 12px -1px rgb(0 0 0 / 10%);
+        transition: .5s;
+    }
+    .menu ul li{
+        list-style: none;
+        display: block;
+        margin: 25px 40px 25px auto;
+        text-align: center;
+    }
+    .menu ul li a{
+        margin-left: 0px;
+        font-size: 16px;
+    }
+    .menuicon{
+        display: block;
+        margin-right: 20px;
+    }
+}
+
+/**************  background cover image  ***************/
+.cover {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)) , url('https://cdn.theatlantic.com/thumbor/O6owSgFL2ce0qsNfyHIrZgDPPQo=/0x0:2500x1406/1600x900/media/img/mt/2022/03/GettyImages_901821222_copy/original.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 1; 
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.cover .upperline:before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    background: #262626;
+    z-index: 1;
+}
+
+.cover .upperline:after{
+   content:'';
+   position: absolute;
+   display: block;
+   top: 30%;
+   left: 33%;
+   width: 34%;
+   height: 3px;
+   background: #fff;
+   z-index: 2;
+   transform-origin: left;
+   transform: scaleX(0);
+   animation: animate2 3.7s infinite alternate;
+}
+
+@keyframes animate2
+{
+   0%
+   {
+       transform: translateX(0) scaleX(0);
+       transform-origin: left;
+       left: 33%;
+       right: auto;
+   }
+   45%
+   {
+       transform: translateX(0) scaleX(1);
+       transform-origin: left;
+       left: 33%;
+       right:auto;
+   }
+   50%
+   {
+       transform: translateX(0) scaleX(1);
+       transform-origin: right;
+       left: auto;
+       right:33%;
+   }
+   100%
+   {
+       transform: translateX(0) scaleX(0);
+       transform-origin: right;
+       left: auto;
+       right: 33%;
+   }
+}
+
+.cover .belowline:after{
+   content:'';
+   position: absolute;
+   display: block;
+   top: 70%;
+   left: 33%;
+   width: 34%;
+   height: 3px;
+   background: #fff;
+   z-index: 2;
+   transform-origin: left;
+   transform: scaleX(0);
+   animation: animate3 3.7s infinite alternate;
+}
+
+@keyframes animate3
+{
+   0%
+   {
+       transform: translateX(0) scaleX(0);
+       transform-origin: left;
+       left: 33%;
+       right: auto;
+   }
+   45%
+   {
+       transform: translateX(0) scaleX(1);
+       transform-origin: left;
+       left: 33%;
+       right:auto;
+   }
+   50%
+   {
+       transform: translateX(0) scaleX(1);
+       transform-origin: right;
+       left: auto;
+       right:33%;
+   }
+   100%
+   {
+       transform: translateX(0) scaleX(0);
+       transform-origin: right;
+       left: auto;
+       right: 33%;
+   }
+}
+
+.cover .information {
+    max-width: 1200px;    
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.information h3 {
+    font-size: 22px;
+    letter-spacing: 5px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.information h2 {
+    font-size: 48px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.information h1#design{
+    font-size: 110px;
+    line-height: 1.2;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    background: url(back.png);
+    -webkit-background-clip: text;
+    letter-spacing: 15px;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+}
+
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+    }
+}
+
+.glowing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.glowing a button{
+    position: relative;
+    background: #fff; 
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: 5px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 500; 
+    transition: .5s;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.glowing a button:hover {
+    background: var(--clr);
+    color: var(--clr);
+    letter-spacing: 0.8em;
+    box-shadow: 0 0 80px var(--clr);
+}
+
+.glowing a button:before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #000000f6;
+    border-radius: 3px;
+}
+
+.glowing a button span{
+    position: relative;
+    z-index: 1;
+}
+
+.glowing a button i {
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+
+.glowing a button i::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 80%;
+    width: 10px;
+    height: 4px;
+    background: #000000f6;
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s; 
+}
+
+.glowing a button:hover i::before{
+    width: 20px;
+    left: 20%;
+}
+
+.glowing a button i::after{
+    content:'';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 10px;
+    height: 4px;
+    background: #000000f6;
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s; 
+}
+
+.glowing a button:hover i::after{
+    width: 20px;
+    left: 80%;
+}
+
+/* Mobile view for hero section */
+@media only screen and (max-width : 768px){
+    .cover {
+        padding-top: 65px;
+    }
+    
+    .cover .upperline:after{
+       top: 25%;
+    }
+    
+    .cover .belowline:after{
+       top: 75%;
+    }
+    
+    .information h3 {
+        font-size: 18px;
+        letter-spacing: 3px;
+    }
+
+    .information h2 {
+        font-size: 30px;
+    }
+    
+    .information h1#design{
+        font-size: 50px;
+        letter-spacing: 8px;
+        margin-top: 10px;
+    }
+    
+    .glowing a button {
+        font-size: 1.2em;
+        padding: 12px 24px;
+    }
+}
+
+/* *******************************   ABOUT **************************************** */
+.about{
+    width: 100%;
+    display: flex;
+    background-color: var(--dark-bg);
+    padding: 100px 0;
+}
+
+/*  About image */
+.about .imgcontanner{
+    width: 50%;
+    position: relative;
+}
+
+.about .imgcontanner .aboutimg {
+    position: absolute;
+    background: url('child2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 90%;
+    height: 450px;
+    top: 0;
+    left: 10%;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+
+.about .imgcontanner .aboutimg:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* About content */
+.about .aboutcontent {
+    width: 50%;
+    padding: 0 10% 0 5%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.aboutcontent h5 {
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.aboutcontent h1 {
+    font-weight: 700;
+    font-size: 42px;
+    padding-bottom: 30px;
+}
+
+.aboutcontent p {
+    padding-bottom: 20px;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+@media only screen and (max-width : 768px) {
+    .about{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 60px 0;
+    }
+    
+    .about .imgcontanner{
+        width: 100%;
+        height: 300px;
+        margin-bottom: 40px;
+    }
+    
+    .about .imgcontanner .aboutimg {
+        position: relative;
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+        left: 5%;
+        display: block;
+    }
+
+    .about .aboutcontent {
+        width: 100%;
+        padding: 0 5%;
+    }
+    
+    .aboutcontent h5 {
+        margin-bottom: 15px;
+    }
+    
+    .aboutcontent h1 {
+        font-size: 32px;
+        padding-bottom: 20px;
+    }
+}
+
+/* Donation Section */
+.donate-section {
+    padding: 100px 5%;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    text-align: center;
+}
+
+.donate-section h2 {
+    font-size: 42px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.donate-section > p {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    color: #555;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.donation-options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.donation-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    transition: var(--transition);
+}
+
+.donation-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.donation-amount {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.donation-card p {
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.donate-amount-btn, .donate-custom-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.donate-amount-btn:hover, .donate-custom-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--dark-bg);
+    transform: scale(1.05);
+}
+
+.custom-donation {
+    margin-top: 50px;
+}
+
+.custom-donation h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.custom-amount-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.custom-amount-input span {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.custom-amount-input input {
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 2px solid #ddd;
+    font-size: 18px;
+    flex: 1;
+    outline: none;
+    transition: var(--transition);
+}
+
+.custom-amount-input input:focus {
+    border-color: var(--primary-color);
+}
+
+@media only screen and (max-width: 768px) {
+    .donate-section {
+        padding: 60px 5%;
+    }
+    
+    .donate-section h2 {
+        font-size: 32px;
+    }
+    
+    .donation-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .donation-card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/************************************** Contact **********************************************/
+.contact {
+    width: 100%;
+    box-sizing: border-box; 
+    background-color: transparent; 
+    padding: 100px 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.6)), url('https://media.istockphoto.com/id/517893346/photo/rear-view-of-a-seated-sad-young-boy-against-black.jpg?s=612x612&w=0&k=20&c=iu0BiL87vDJ5OGy8MHuLalYta5QzN6CXYeljhv4p6JQ=');
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.contact .text h1 {
+    text-align: center;
+    position: relative;
+    font-size: 6vw;
+    color: #000;
+    -webkit-text-stroke: 0.3vw #000;
+    text-transform: uppercase; 
+}
+
+.contact .text h1::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    color: white;
+    -webkit-text-stroke: 0vw #000;
+    border-right: 5px solid white;
+    overflow: hidden;
+    animation: text 6s linear infinite;
+}
+
+@keyframes text{
+    0%,10%,100% {
+        width: 0;
+    }
+    70%,90% {
+        width: 100%;
+    }
+}
+
+.contactcontanner {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Message form */
+.messageform {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.messageform .form {
+    width: 100%;
+    margin: 50px auto;
+}
+
+.messageform input, .messageform #inputbox {
+    width: 100%;
+    color: white;
+    box-sizing: border-box;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.messageform input:focus, .messageform #inputbox:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 10px rgba(24, 240, 139, 0.3);
+}
+
+.messageform input::placeholder, .messageform #inputbox::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.messageform button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.messageform button:hover {
+    background-color: var(--secondary-color);
+    color: var(--dark-bg);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(24, 240, 139, 0.3);
+}
+
+@media only screen and (max-width: 768px) {
+    .contact {
+        padding: 60px 0;
+    }
+    
+    .contact .text h1 {
+        font-size: 10vw;
+    }
+    
+    .messageform .form {
+        margin: 30px auto;
+    }
+    
+    .messageform input, .messageform #inputbox {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .messageform button {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+/* Footer */
+footer {
+    position: relative;
+    width: 100%;
+    background: #3586ff;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .social_icon,
+footer .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+footer .social_icon li,
+footer .menu li {
+    list-style: none;
+}
+
+footer .social_icon li a {
+    font-size: 2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+footer .social_icon li a:hover {
+    transform: translateY(-10px);
+}
+
+footer .menu li a {
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+footer .menu li a:hover {
+    opacity: 0.7;
+}
+
+footer p {
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+footer .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(wave.png);
+    background-size: 1000px 100px;
+}
+
+footer .wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 4s linear infinite;
+}
+
+footer .wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave_02 4s linear infinite;
+}
+
+footer .wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWave 3s linear infinite;
+}
+
+footer .wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animateWave_02 3s linear infinite;
+}
+
+@keyframes animateWave {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+@keyframes animateWave_02 {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+/* Mobile view of footer */
+@media only screen and (max-width: 768px) {
+    footer {
+        padding: 15px 20px;
+    }
+    
+    footer .social_icon li a {
+        font-size: 1.6em;
+        margin: 0 8px;
+    }
+    
+    footer .menu li a {
+        font-size: 1em;
+        margin: 0 8px;
+    }
+    
+    footer p {
+        font-size: 0.9em;
+    }
+}
+
+/* Additional Animations */
+.fadeIn {
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll to top button */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+@media only screen and (max-width: 768px) {
+    .scroll-top {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Fundraising Progress Bar Styles */
+.fundraising-progress {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.progress-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.progress-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.amount-raised {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.amount-target {
+    font-size: 18px;
+    color: #666;
+}
+
+.progress-percentage {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--dark-bg);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 2px solid #f0f0f0;
+}
+
+.progress-container {
+    position: relative;
+    margin: 40px 0;
+}
+
+.progress-bar {
+    height: 30px;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-filled {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 15px;
+    position: relative;
+    width: 0%;
+    transition: width 1.5s ease-in-out;
+    box-shadow: 0 0 10px rgba(30, 155, 255, 0.5);
+}
+
+.progress-filled::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.progress-markers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.marker {
+    position: absolute;
+    top: -10px;
+    height: 50px;
+    width: 2px;
+    background-color: #ddd;
+}
+
+.marker::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -4px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+}
+
+.marker.reached::before {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.marker-label {
+    position: absolute;
+    top: -30px;
+    left: -15px;
+    font-size: 12px;
+    color: #777;
+    width: 30px;
+    text-align: center;
+}
+
+.marker-25 {
+    left: 25%;
+}
+
+.marker-50 {
+    left: 50%;
+}
+
+.marker-75 {
+    left: 75%;
+}
+
+.marker-100 {
+    left: 100%;
+    margin-left: -2px;
+}
+
+.progress-milestones {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 40px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.milestone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 22%;
+    min-width: 120px;
+    padding: 15px 10px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.milestone.reached {
+    background-color: rgba(24, 240, 139, 0.1);
+}
+
+.milestone-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    color: #777;
+    font-size: 22px;
+    transition: all 0.3s ease;
+}
+
+.milestone.reached .milestone-icon {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(24, 240, 139, 0.3);
+}
+
+.milestone-text {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.milestone.reached .milestone-text {
+    color: var(--dark-bg);
+    font-weight: 600;
+}
+
+.milestone::after {
+    content: attr(data-milestone);
+    position: absolute;
+    bottom: -20px;
+    font-size: 12px;
+    color: #999;
+    transform: translateY(0);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.milestone:hover::after {
+    transform: translateY(5px);
+    opacity: 1;
+}
+
+.progress-supporters {
+    margin-top: 40px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+}
+
+.supporter-count {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.supporter-count span {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.recent-donations {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.recent-donation {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.recent-donation:hover {
+    background-color: rgba(30, 155, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.donation-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.donation-info {
+    flex: 1;
+}
+
+.donation-name {
+    font-weight: 600;
+    color: #444;
+}
+
+.donation-amount {
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+.donation-time {
+    font-size: 12px;
+    color: #999;
+}
+
+/* Mobile responsiveness for progress bar */
+@media only screen and (max-width: 768px) {
+    .fundraising-progress {
+        padding: 20px;
+    }
+    
+    .progress-stats {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .progress-percentage {
+        align-self: flex-end;
+    }
+    
+    .progress-milestones {
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .milestone {
+        width: 45%;
+    }
+    
+    .recent-donation {
+        flex-wrap: wrap;
+    }
+    
+    .donation-time {
+        width: 100%;
+        text-align: right;
+        margin-top: 5px;
+    }
+}

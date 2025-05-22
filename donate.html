@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - ನಾಳೆ ಬೆಳಗು</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        :root {
+            --primary-color: #1e9bff;
+            --secondary-color: #18f08b;
+            --dark-bg: #000000f6;
+            --light-text: #fff;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .header {
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: var(--dark-bg);
+        }
+        
+        .header h1 span {
+            color: var(--primary-color);
+        }
+        
+        .qr-container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            margin-bottom: 40px;
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .qr-title {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .qr-subtitle {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        
+        .kannada-quote {
+            font-size: 24px;
+            margin: 20px 0;
+            color: #444;
+            font-style: italic;
+        }
+        
+        .english-quote {
+            font-size: 22px;
+            margin-bottom: 30px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .qr-code {
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .scan-instruction {
+            font-size: 18px;
+            color: #666;
+            margin-top: 30px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background-color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .back-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(24, 240, 139, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .qr-container {
+                padding: 30px 20px;
+            }
+            
+            .qr-title {
+                font-size: 24px;
+            }
+            
+            .kannada-quote {
+                font-size: 20px;
+            }
+            
+            .english-quote {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1><span>ನಾಳೆ</span> ಬೆಳಗು</h1>
+    </div>
+    
+    <div class="qr-container">
+        <h2 class="qr-title">Donate to Support Our Cause</h2>
+        <p class="qr-subtitle">Your contribution will help provide education and resources to children in need.</p>
+        
+        <!-- <div class="kannada-quote">"ಕನ್ನಡ ಶಾಲೆ ಉಳಿಸಿ, ಜ್ಞಾನ ತೋಟ್ಟಿಲು ಬೆಳೆಸಿ!"</div>
+        <div class="english-quote">JOIN HANDS, CREATE CHANGE</div> -->
+        
+        <!-- Use an inline image style to ensure proper sizing -->
+        <div style="max-width: 450px; margin: 0 auto;">
+            <img src="C:\Users\ASUS\Downloads\GPAY Payment.jpeg" alt="Donation QR Code" class="qr-code" onerror="this.src='https://qrcodesof.com/qqEFAAbUPcFqkbTgTYhD'; this.onerror=null;">
+        </div>
+        
+        <p class="scan-instruction">Scan to pay with any UPI app</p>
+        
+        <a href="index.html" class="back-btn">Back to Home</a>
+    </div>
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Check if we have an amount parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const amount = urlParams.get('amount');
+        
+        // If an amount was passed, update the instruction text
+        if (amount) {
+            document.querySelector('.scan-instruction').textContent = 
+                `Scan to pay ₹${amount} with any UPI app`;
+        }
+        
+        // Save a reference to the QR code for tracking purposes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track that user has viewed the donation page
+            if (typeof sessionStorage !== 'undefined') {
+                sessionStorage.setItem('donationViewed', 'true');
+            }
+        });
+    </script>
+</body>
+</html> 
